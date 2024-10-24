@@ -1,0 +1,56 @@
+{
+  "components": [
+    {
+      "type": "Arduino Uno",
+      "pins": {
+        "GND": "Ground",
+        "5V": "5V"
+      }
+    },
+    {
+      "type": "Servo Motor",
+      "connections": {
+        "Signal": "Pin 9",
+        "Power": "5V",
+        "Ground": "GND"
+      }
+    },
+    {
+      "type": "IR Sensor",
+      "connections": {
+        "Signal": "Pin 2",
+        "VCC": "5V",
+        "Ground": "GND"
+      }
+    },
+    {
+      "type": "Buzzer",
+      "connections": {
+        "Signal": "Pin 8",
+        "Ground": "GND"
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "Arduino Uno 5V",
+      "to": ["IR Sensor VCC", "Servo Motor Power"]
+    },
+    {
+      "from": "Arduino Uno GND",
+      "to": ["IR Sensor Ground", "Servo Motor Ground", "Buzzer Ground"]
+    },
+    {
+      "from": "Arduino Pin 9",
+      "to": "Servo Motor Signal"
+    },
+    {
+      "from": "Arduino Pin 2",
+      "to": "IR Sensor Signal"
+    },
+    {
+      "from": "Arduino Pin 8",
+      "to": "Buzzer Signal"
+    }
+  ]
+}
