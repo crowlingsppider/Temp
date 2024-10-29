@@ -17,8 +17,11 @@ void loop() {
   if (sensorValue == HIGH) {  // If object detected
     myservo.write(90);    // Turn servo to 90 degrees
     digitalWrite(buzzer, HIGH);  // Turn on buzzer
-  } else {  // If no object detected
-    myservo.write(0);     // Turn servo back to 0 degrees
+  } else { 
+    // If no object detected
+    myservo.write(0);  
+    delay(3000) ;
+    // Turn servo back to 0 degrees
     digitalWrite(buzzer, LOW);   // Turn off buzzer
   }
 
